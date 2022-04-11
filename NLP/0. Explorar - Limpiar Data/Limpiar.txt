@@ -1,0 +1,42 @@
+my_list = ['one', 'two', 'three', 'two']
+my_list.remove('two')
+
+
+
+#incluya ‘ ‘ 
+import re
+texto = re.sub(r"[^a-zA-Z0-9 ]","", texto)
+
+texto = texto.replace("!","").replace(",","").replace(".","").lower().split(" ")
+
+
+
+
+tweet = Tweet.replace("!","").replace(",","").replace(".","").lower().split(" ")
+
+
+simbolos = ['¿','?','.','.',';',':','¡','!']
+numpalabras = 0
+dpalabras = dict()
+
+with open('./citas.txt','r') as fichero:
+    for linea in fichero:
+
+        for simbolo in simbolos:
+            linea = linea.replace(simbolo,' ')
+
+
+
+def word_cleaner(txt, to_remove):
+    filtered = []
+    for palabra in txt.split():
+        if palabra not in to_remove:
+            filtered.append(palabra)
+
+    return " ".join(filtered)
+
+ignore_self_words = ["i", "you", "he", "she", "us", "they"]
+print(word_cleaner("hi there how are you you you you you", ignore_self_words))
+
+
+

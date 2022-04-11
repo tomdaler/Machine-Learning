@@ -1,0 +1,45 @@
+
+simbolos = ['¿','?','.','.',';',':','¡','!']
+numpalabras = 0
+dpalabras = dict()
+
+with open('./citas.txt','r') as fichero:
+    for linea in fichero:
+
+        for simbolo in simbolos:
+            linea = linea.replace(simbolo,' ')
+
+        palabras = linea.split()
+        for palabra in palabras:
+            numpalabras += 1
+            dpalabras[palabra] = dpalabras.get(palabra , 0) + 1
+
+
+print('El texto contiene %s palabras' %numpalabras)
+print('Las palabras se han repetido de la siguiente forma:')
+for palabra in dpalabras:
+    veces = 'veces'
+    if dpalabras[palabra] == 1:
+        veces = 'vez'
+    print('La palabra "%s" se ha repetido %s %s' %(palabra, dpalabras[palabra], veces))
+
+
+
+
+El texto contiene 108 palabras
+Las palabras se han repetido de la siguiente forma:
+La palabra "No" se ha repetido 1 vez
+La palabra "hay" se ha repetido 1 vez
+La palabra "que" se ha repetido 3 veces
+La palabra "ir" se ha repetido 1 vez
+La palabra "para" se ha repetido 3 veces
+La palabra "atrás" se ha repetido 1 vez
+La palabra "ni" se ha repetido 1 vez
+La palabra "darse" se ha repetido 1 vez
+La palabra "impulso" se ha repetido 1 vez
+La palabra "Es" se ha repetido 1 vez
+La palabra "sencillo" se ha repetido 1 vez
+La palabra "hacer" se ha repetido 2 veces
+La palabra "las" se ha repetido 1 vez
+La palabra "cosas" se ha repetido 1 vez
+

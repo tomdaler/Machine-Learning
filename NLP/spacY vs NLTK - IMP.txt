@@ -1,0 +1,52 @@
+
+
+Spacy
+   Object Oriented
+   Provides most efficient NLP algorithm for a given task
+   Hence if you care about the end result, go with spacy
+   NEW
+
+NLTK
+    string processing library
+    Provives many algorithms for specific tasks
+    OLD
+
+STR_SAMPLE ="Dr. Strange loves pav bhaji. Hulk loves chaat of Delhi"
+
+
+SPACY
+=====
+
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+
+doc = nlp(STR_SAMPLE)
+
+for sentence in doc.sents:
+    print(sentence)
+
+    for word in sentence:
+         print(word)
+
+
+NLTK
+====
+
+import nltk
+nltk.download('punkt')
+
+from nltk.tokenize import sent_tokenize
+sentences = sent_tokenize(STR_SAMPLE) #splits Dr. and the rest
+
+from nltk.tokenize import word_tokenize
+words     = word_tokenize(STR_SAMPLE) 
+
+Tokenize "." 
+   Dr
+   .
+   Strange
+   loves .....
+
+
+CONCLUSION: It seems it is better spacy, a new library
